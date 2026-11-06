@@ -66,6 +66,7 @@ Investigación y Referencias: Se analizaron portfolios de la industria para defi
 
 Sistema de Diseño: Se definieron tokens de color (variables CSS), tipografías (Inter y Playfair Display) y espaciados.
 
+Fuentes: https://fonts.google.com/specimen/Inter y https://fonts.google.com/specimen/Playfair+Display
 Wireframes y Prototipo: Se diseñaron los wireframes en Figma antes de pasar al código.
 
 Maquetado: Se implementó un diseño 100% responsive (Mobile-first) utilizando CSS Grid y Flexbox.
