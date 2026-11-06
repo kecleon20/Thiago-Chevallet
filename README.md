@@ -40,6 +40,7 @@ El sitio fue auditado con Google Lighthouse, obteniendo puntajes casi perfectos 
 *Nota técnica: La puntuación de 96 en accesibilidad se debe a pequeños contrastes de color en algunos textos secundarios sobre fondos con transparencia (glassmorphism). Se optó por priorizar la identidad visual del diseño, manteniendo un nivel de legibilidad óptimo.*
 
 ## 🛠️ Tecnologías utilizadas
+
 *   **HTML5** semántico.
 *   **CSS3** (Variables, Flexbox, CSS Grid, animaciones con `@keyframes`).
 *   **JavaScript Vanilla** (Módulos ES6, manipulación del DOM, IntersectionObserver).
@@ -58,8 +59,9 @@ El sitio fue auditado con Google Lighthouse, obteniendo puntajes casi perfectos 
 ├── sitemap.xml         # Mapa del sitio para SEO
 ├── 404.html            # Página de error personalizada
 ├── 404.css             # Estilos específicos de la página 404
-└── assets/             # Carpeta con imágenes, CV y certificados🎨 Proceso de Diseño (UX/UI)
+└── assets/             # Carpeta con imágenes, CV y certificados
 
+🎨 Proceso de Diseño (UX/UI)
 Investigación y Referencias: Se analizaron portfolios de la industria para definir un estilo visual moderno, oscuro y minimalista.
 
 Sistema de Diseño: Se definieron tokens de color (variables CSS), tipografías (Inter y Playfair Display) y espaciados.
@@ -69,9 +71,5 @@ Wireframes y Prototipo: Se diseñaron los wireframes en Figma antes de pasar al 
 Maquetado: Se implementó un diseño 100% responsive (Mobile-first) utilizando CSS Grid y Flexbox.
 
 Accesibilidad: Se aplicaron prácticas de accesibilidad (WCAG), como el "Skip to content", atributos aria-label, alto contraste y navegación por teclado.
-
-📸 Capturas del Sitio
-Inicio (Desktop)	Proyectos	Experiencia
-https://assets/captura-inicio.jpg	https://assets/captura-proyectos.jpg	https://assets/captura-experiencia.jpg
 
 Desarrollado por Thiago Chevallet · 2026
