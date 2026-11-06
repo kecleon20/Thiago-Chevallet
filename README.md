@@ -1,5 +1,15 @@
 # 🛡️ Portfolio Web Personal - Thiago Chevallet
 
+## 📐 Prototipo y Wireframe en Figma
+
+Antes de escribir la primera línea de código, diseñé la arquitectura de información y los wireframes en Figma para definir la jerarquía visual y el flujo de navegación.
+
+[![Ver Wireframe en Figma](https://img.shields.io/badge/Figma-Ver%20Wireframe-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/make/2NWlTb30rrRjLGbq4FXPtK/Wireframe-Portfolio-Thiago-Chevallet)
+
+> *Hacé clic en el botón para ver el prototipo interactivo generado con Figma Make.*
+
+![Vista previa del Wireframe](assets/wireframe.png)
+
 Este es mi portafolio web personal, desarrollado como Trabajo Final para la cátedra de **Diseño UX/UI** (Licenciatura en Sistemas - UADER FCyT).
 
 El objetivo del sitio es presentar mi perfil profesional como **Data Analyst Junior**, mostrando mis habilidades técnicas, proyectos destacados y mi experiencia en la automatización de datos para PyMEs.
@@ -43,16 +53,3 @@ Accesibilidad: Se aplicaron prácticas de accesibilidad (WCAG), como el "Skip to
 
 Inicio (Desktop)	Proyectos	Experiencia
 https://assets/captura-inicio.jpg	https://assets/captura-proyectos.jpg	https://assets/captura-experiencia.jpg
-
-🚦 Cómo correr el proyecto localmente
-Debido a que el proyecto utiliza un formulario conectado a Formspree y carga de fuentes externas, se recomienda usar un servidor local para evitar problemas de CORS.
-
-Opción 1: Live Server (VSCode)
-
-Instalá la extensión "Live Server".
-
-Hacé clic derecho en index.html y seleccioná "Open with Live Server".
-Opción 2: Usando Node.js
-
-bash:
-npx serve
