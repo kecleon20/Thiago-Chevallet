@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anita Nails | Tu momento de brillar en Colón</title>
+  <meta name="description" content="Uñas impecables, diseño a tu medida y el tiempo que te merecés. Nail Studio en Colón, Entre Ríos." />
+  
+  <!-- Fuentes optimizadas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="anita.css" />
+  <style>
+    
+    /* =========================================================================
+       1. VARIABLES Y RESET (Sistema de Diseño)
+       ========================================================================= */
+    :root {
+      /* Paleta de colores extraída del Figma */
+      --bg-cream: #FDFBF7;
+      --bg-pink: #F7EFF1;
+      --color-primary: #7A5A68; /* Mauve/Dusty Pink */
+      --color-primary-hover: #634651;
+      --text-dark: #2D2321;
+      --text-muted: #6B5D59;
+      --white: #FFFFFF;
+      
+      /* Tipografías */
+      --font-serif: 'Playfair Display', serif;
+      --font-sans: 'Inter', sans-serif;
+      
+      /* Espaciados y Bordes */
+      --radius-sm: 8px;
+      --radius-md: 20px;
+      --radius-pill: 50px;
+      --transition: 0.3s ease;
+      --container-width: 1100px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+
+    .container {
+      width: min(var(--container-width), 90vw);
+      margin: 0 auto;
+    }
+
+    /* Tipografía Global */
+    h1, h2, h3, h4, .logo, blockquote {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+    h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; letter-spacing: -0.01em; }
+    h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    p { color: var(--text-muted); }
+    
+    .eyebrow {
+      display: block; font-family: var(--font-sans);
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--text-muted); margin-bottom: 1rem; font-weight: 600;
+    }
+    .subtitle { font-size: 1.1rem; margin-bottom: 3rem; }
+
+    /* Botones */
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      background-color: var(--color-primary);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border-radius: var(--radius-pill);
+      font-weight: 500; font-size: 0.95rem;
+      transition: var(--transition);
+      border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background-color: var(--color-primary-hover); transform: translateY(-2px); }
+    .btn-light { background-color: var(--white); color: var(--color-primary); }
+    .btn-light:hover { background-color: var(--bg-cream); }
+
+    /* =========================================================================
+       2. HEADER Y NAVEGACIÓN
+       ========================================================================= */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(253, 251, 247, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      z-index: 100;
+    }
+    .nav-container {
+      display: flex; justify-content: space-between; align-items: center;
+      height: 80px;
+    }
+    .logo { font-size: 1.6rem; font-weight: 600; letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); transition: var(--transition); }
+    .nav-links a:hover { color: var(--text-dark); }
+
+    /* =========================================================================
+       3. HERO SECTION
+       ========================================================================= */
+    .hero { padding: 160px 0 80px; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .hero-text p { font-size: 1.1rem; margin-bottom: 2rem; max-width: 90%; }
+    .hero-text .subtext { display: block; margin-top: 1rem; font-size: 0.8rem; }
+    
+    .hero-image { 
+      position: relative; border-radius: var(--radius-md); overflow: hidden; 
+      aspect-ratio: 4/5; box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+    .img-badge {
+      position: absolute; bottom: 1rem; right: 1rem;
+      background: rgba(255,255,255,0.9); padding: 0.4rem 0.8rem;
+      border-radius: var(--radius-sm); font-size: 0.7rem; color: var(--text-muted);
+      backdrop-filter: blur(4px);
+    }
+
+    /* =========================================================================
+       4. LA EXPERIENCIA (Features)
+       ========================================================================= */
+    .experience { padding: 80px 0; background: var(--white); }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 3rem; }
+    .feature .icon { font-size: 1.5rem; color: var(--color-primary); display: block; margin-bottom: 1rem; }
+    .feature p { font-size: 0.95rem; }
+
+    /* =========================================================================
+       5. SERVICIOS
+       ========================================================================= */
+    .services { padding: 100px 0; background-color: var(--bg-pink); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .service-card {
+      background: var(--white); padding: 2.5rem; border-radius: var(--radius-md);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: var(--transition);
+      display: flex; flex-direction: column;
+    }
+    .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
+    .service-tag { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 0.5rem; }
+    .service-card p { font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; }
+    .link-wa { font-size: 0.85rem; font-weight: 600; color: var(--color-primary); transition: var(--transition); }
+    .link-wa:hover { color: var(--color-primary-hover); text-decoration: underline; }
+
+    /* =========================================================================
+       6. SOBRE MI
+       ========================================================================= */
+    .about { padding: 100px 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .quote-box {
+      background-color: var(--bg-pink); padding: 4rem 3rem;
+      border-radius: 200px 200px 200px 20px; text-align: center;
+    }
+    .quote-box span { color: var(--color-primary); font-size: 1.5rem; }
+    .quote-box blockquote { font-size: 1.5rem; font-style: italic; margin: 1rem 0; }
+    .quote-box .author { font-family: var(--font-sans); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; }
+    .about-text p { margin-bottom: 1rem; }
+
+    /* =========================================================================
+       7. UBICACIÓN Y PASOS
+       ========================================================================= */
+    .location { padding: 100px 0; background: var(--bg-cream); }
+    .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
+    .location-card { background: var(--bg-pink); padding: 3rem; border-radius: var(--radius-md); }
+    .location-card p { margin-bottom: 1rem; }
+    .steps-card h3 { margin-bottom: 2rem; }
+    .step { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; }
+    .step span { color: var(--color-primary); font-weight: 700; font-size: 0.9rem; }
+    .step h4 { font-family: var(--font-sans); font-size: 1rem; margin-bottom: 0.2rem; }
+    .step p { font-size: 0.9rem; }
+    .mt-3 { margin-top: 2rem; }
+
+    /* =========================================================================
+       8. PREGUNTAS FRECUENTES (FAQ)
+       ========================================================================= */
+    .faq { padding: 100px 0; background: var(--white); }
+    .faq-list { max-width: 800px; margin-top: 3rem; }
+    .faq-item { border-bottom: 1px solid rgba(0,0,0,0.1); padding: 1.5rem 0; }
+    .faq-item h4 { font-family: var(--font-sans); font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .faq-item p { font-size: 0.95rem; }
+
+    /* =========================================================================
+       9. FOOTER
+       ========================================================================= */
+    .footer { background: var(--color-primary); color: var(--white); padding: 100px 0 40px; text-align: center; }
+    .footer h2 { font-size: 3rem; margin-bottom: 1rem; color: var(--white); }
+    .footer p { font-size: 1.1rem; margin-bottom: 2rem; color: #E5D5DB; }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      border-top: 1px solid rgba(255,255,255,0.2); margin-top: 6rem; padding-top: 2rem;
+      text-align: left; font-size: 0.9rem; color: #E5D5DB;
+    }
+    .footer-bottom strong { color: var(--white); font-family: var(--font-serif); font-size: 1.2rem; display: block; margin-bottom: 0.5rem; }
+
+    /* =========================================================================
+       10. RESPONSIVE (Tablet y Mobile)
+       ========================================================================= */
+    @media (max-width: 900px) {
+      /* Header adaptado a mobile: Logo y Botón arriba, Nav abajo */
+      .nav-container { flex-wrap: wrap; height: auto; padding: 1rem 0; gap: 1rem; }
+      .nav-links {
+        order: 3; width: 100%; justify-content: center; gap: 1.5rem;
+        border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1rem; display: flex;
+      }
+      .nav-links a { font-size: 0.85rem; }
+      .header .btn-primary { padding: 0.6rem 1.2rem; font-size: 0.8rem; }
+
+      /* Hero: Invertir a columna (Imagen arriba, texto abajo) */
+      .hero { padding-top: 180px; }
+      .hero-grid { display: flex; flex-direction: column-reverse; gap: 2rem; }
+      .hero-image { width: 100%; aspect-ratio: 4/5; }
+      .hero-text h1 { font-size: 2.8rem; }
+      .hero-text p { max-width: 100%; }
+
+      /* Grillas a 1 columna */
+      .features-grid, .services-grid, .about-grid, .location-grid { 
+        grid-template-columns: 1fr; gap: 2.5rem; 
+      }
+
+      /* Quote box adaptado a arco */
+      .about-grid { display: flex; flex-direction: column; }
+      .quote-box { border-radius: 150px 150px 20px 20px; padding: 3rem 2rem; width: 100%; }
+      .quote-box blockquote { font-size: 1.4rem; }
+
+      /* Footer apilado */
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 2rem; text-align: left; }
+      .footer-bottom div:last-child { text-align: left !important; }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 2rem; }
+      .hero { padding-top: 160px; padding-bottom: 40px; }
+      .service-card { padding: 1.8rem; }
+      .location-card { padding: 2rem 1.5rem; }
+      .footer h2 { font-size: 2.2rem; }
+      .footer .btn-primary { width: 100%; }
+      .hero-text .subtext { font-size: 0.75rem; line-height: 1.4; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">Anita Nails</a>
+      <nav class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#sobre-mi">Sobre Mí</a>
+        <a href="#ubicacion">Ubicación</a>
+      </nav>
+      <a href="https://wa.me/5493447123456?text=Hola%20Anita!%20Quiero%20reservar%20un%20turno." target="_blank" class="btn-primary">Reservar Turno</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <span class="eyebrow">Nail Studio / Colón, Entre Ríos</span>
+          <h1>Tu momento de brillar en Colón.</h1>
+          <p>Uñas impecables, diseño a tu medida y el tiempo que te merecés. Un espacio pensado para vos, en el corazón de la ciudad.</p>
+          <a href="https://wa.me/5493447123456?text=Hola%20Anita!%20Quiero%20reservar%20un%20turno." target="_blank" class="btn-primary">Reservá tu turno hoy ↗</a>
+          <span class="subtext">Atención personalizada | Colón, Entre Ríos</span>
+        </div>
+        <div class="hero-image">
+          <!-- Nota: Para producción, reemplazar por una foto local en la carpeta assets -->
+          <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=800&auto=format&fit=crop" alt="Manos con uñas esculpidas tomando un café">
+          <span class="img-badge">Imagen de referencia - No es el local</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- LA EXPERIENCIA -->
+    <section class="experience">
+      <div class="container">
+        <span class="eyebrow">01 / La experiencia Anita</span>
+        <h2>Mucho más que uñas lindas.</h2>
+        <p class="subtitle">Bajá un cambio. Este ratito es para vos.</p>
+        
+        <div class="features-grid">
+          <div class="feature">
+            <span class="icon">♡</span>
+            <h3>Un ratito para vos</h3>
+            <p>Desconectá del apuro y disfrutá de una atención dedicada, a tu ritmo.</p>
+          </div>
+          <div class="feature">
+            <span class="icon">✦</span>
+            <h3>Tu estilo, tus reglas</h3>
+            <p>Del nude de todos los días al diseño que guardaste: lo pensamos juntas.</p>
+          </div>
+          <div class="feature">
+            <span class="icon">☼</span>
+            <h3>Todo claro, desde el inicio</h3>
+            <p>Consultá el valor, la duración y los cuidados antes de reservar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="services">
+      <div class="container">
+        <span class="eyebrow">02 / Servicios</span>
+        <h2>Un diseño tan vos.</h2>
+        <p class="subtitle">Elegí tu punto de partida. El toque final lo decidimos juntas.</p>
+        
+        <div class="services-grid">
+          <div class="service-card">
+            <span class="service-tag">Para tu día a día</span>
+            <h3>Semipermanente</h3>
+            <p>Color que acompaña tu día a día. Un acabado prolijo para llevar tu estilo a todos lados.</p>
+            <a href="#" class="link-wa">Consultar por WhatsApp ↗</a>
+          </div>
+          <div class="service-card">
+            <span class="service-tag">Un cambio de look</span>
+            <h3>Soft gel</h3>
+            <p>El largo y la forma que van con vos. De un look delicado a ese diseño que querés probar.</p>
+            <a href="#" class="link-wa">Consultar por WhatsApp ↗</a>
+          </div>
+          <div class="service-card">
+            <span class="service-tag">Tu toque personal</span>
+            <h3>Nail art</h3>
+            <p>Detalles minimalistas, francesitas con onda o un toque de color. Inspirate y lo charlamos.</p>
+            <a href="#" class="link-wa">Consultar por WhatsApp ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE MI -->
+    <section id="sobre-mi" class="about">
+      <div class="container about-grid">
+        <div class="quote-box">
+          <span>✦</span>
+          <blockquote>"Las uñas más lindas son las que se sienten como vos."</blockquote>
+          <p class="author">La esencia de Anita Nails</p>
+        </div>
+        <div class="about-text">
+          <span class="eyebrow">03 / Sobre mí</span>
+          <h2>Hola, qué lindo tenerte acá.</h2>
+          <p>Anita Nails nace de una idea simple: que hacerte las uñas también sea una forma de cuidarte.</p>
+          <p>Quiero que te sientas cómoda, escuchada y libre de elegir. Traé esa idea que tenés guardada o vení con ganas de descubrir algo nuevo. Lo pensamos juntas.</p>
+          <p><strong>Cercanía. Diseño. Un momento para vos.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN Y PASOS -->
+    <section id="ubicacion" class="location">
+      <div class="container">
+        <span class="eyebrow">04 / Encontranos en Colón</span>
+        <h2>Un mimo en tu rutina.<br>O en tu escapada.</h2>
+        <p class="subtitle">Si vivís acá o estás de paseo, hacete un lugar para vos.</p>
+
+        <div class="location-grid">
+          <div class="location-card">
+            <span class="service-tag">Tu próxima pausa</span>
+            <h3>Colón, Entre Ríos</h3>
+            <p>Argentina</p>
+            <p><strong>Dirección y horarios</strong><br>Consultalos por WhatsApp antes de venir o coordinamos tu turno.</p>
+            <p>Atención con turno previo.</p>
+          </div>
+          <div class="steps-card">
+            <h3>Tu turno, sin vueltas.</h3>
+            <div class="step">
+              <span>01</span>
+              <div>
+                <h4>Contanos qué te gustaría</h4>
+                <p>Servicio, idea de diseño y el día que tenés en mente.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span>02</span>
+              <div>
+                <h4>Despejá todas tus dudas</h4>
+                <p>Consultá valor, duración y disponibilidad.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span>03</span>
+              <div>
+                <h4>Coordinamos tu momento</h4>
+                <p>Confirmamos los detalles de tu visita por WhatsApp.</p>
+              </div>
+            </div>
+            <a href="https://wa.me/5493447123456" target="_blank" class="btn-primary mt-3">Consultá disponibilidad ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="faq">
+      <div class="container">
+        <span class="eyebrow">05 / Antes de venir</span>
+        <h2>Todo lo que querés saber.</h2>
+        
+        <div class="faq-list">
+          <div class="faq-item">
+            <h4>¿Puedo llevar una idea de diseño?</h4>
+            <p>¡Sí! Mandanos una foto de inspiración y charlamos sobre las opciones para tus uñas.</p>
+          </div>
+          <div class="faq-item">
+            <h4>¿Cuánto cuesta y cuánto dura el turno?</h4>
+            <p>Depende del servicio y del diseño. Escribinos y consultá ambos antes de confirmar tu reserva.</p>
+          </div>
+          <div class="faq-item">
+            <h4>¿Estás de vacaciones en Colón?</h4>
+            <p>Contanos qué días vas a estar y consultá los turnos disponibles para sumar un mimo a tu paseo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <span class="eyebrow" style="color: #E5D5DB;">Anita Nails · Colón</span>
+      <h2>Hacé lugar para<br>un momento tuyo.</h2>
+      <p>Tu próxima pausa empieza con un mensaje.</p>
+      <a href="https://wa.me/5493447123456" target="_blank" class="btn-primary btn-light">Reservá tu turno por WhatsApp ↗</a>
+      
+      <div class="footer-bottom">
+        <div>
+          <strong>Anita Nails</strong>
+          <p>Tu estilo. Tu momento.</p>
+        </div>
+        <div style="text-align: right;">
+          <p>Colón, Entre Ríos - Argentina</p>
+          <p>Hecho con amor, pensado para vos.</p>
+          <!-- Link para volver a tu portfolio -->
+          <a href="index.html" style="color: #E5D5DB; text-decoration: underline; font-size: 0.8rem; margin-top: 10px; display: inline-block;">← Volver al portafolio de Thiago</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
